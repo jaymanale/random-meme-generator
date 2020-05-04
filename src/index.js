@@ -33,11 +33,9 @@ const App = () => {
        <div className="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
         {meme.title ? (
           <img
-            src="..."
             className="img-fluid m-auto"
             src={meme.url}
             alt={meme.title}
-            alt="Responsive image"
           />
         ) : (
           <p>Loading...</p>
