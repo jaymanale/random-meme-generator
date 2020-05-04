@@ -23,13 +23,18 @@ const App = () => {
     <React.Fragment>
       <div className="container text-center">
         <p>MEME - {id}</p>
-        <button className="btn btn-primary btn-lg pb-1" onClick={getNextMeme}>
+        <div className="row mb-2">
+
+         <button className="btn btn-primary btn-lg pb-1 m-auto" onClick={getNextMeme}>
           Generate Next
         </button>
+        </div>
+       <div className="row">
+       <div className="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
         {meme.title ? (
           <img
             src="..."
-            className="img-fluid"
+            className="img-fluid m-auto"
             src={meme.url}
             alt={meme.title}
             alt="Responsive image"
@@ -37,6 +42,8 @@ const App = () => {
         ) : (
           <p>Loading...</p>
         )}
+        </div>
+        </div>
       </div>
     </React.Fragment>
   );
