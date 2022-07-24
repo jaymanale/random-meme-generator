@@ -12,11 +12,11 @@ const App = () => {
 
   useEffect(() => {
     fetch(`https://meme-api.herokuapp.com/gimme/${id}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setMeme(data.memes[0]);
       })
-      .catch(e => console.log(e));
+      .catch((e) => console.log(e));
   }, [id]);
 
   return (
@@ -24,23 +24,22 @@ const App = () => {
       <div className="container text-center">
         <p>MEME - {id}</p>
         <div className="row mb-2">
-
-         <button className="btn btn-primary btn-lg pb-1 m-auto" onClick={getNextMeme}>
-          Generate Next
-        </button>
+          <button className="btn btn-primary   " onClick={getNextMeme}>
+            Generate Next
+          </button>
         </div>
-       <div className="row">
-       <div className="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-        {meme.title ? (
-          <img
-            className="img-fluid m-auto"
-            src={meme.url}
-            alt={meme.title}
-          />
-        ) : (
-          <p>Loading...</p>
-        )}
-        </div>
+        <div className="row">
+          <div className="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+            {meme.title ? (
+              <img
+                className="img-fluid rounded mx-auto d-block m-auto"
+                src={meme.url}
+                alt={meme.title}
+              />
+            ) : (
+              <p>Loading...</p>
+            )}
+          </div>
         </div>
       </div>
     </React.Fragment>
